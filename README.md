@@ -1,3 +1,7 @@
+# before launching the application
+
+In the getBooks.js file you have to point to your google api key in key variable
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

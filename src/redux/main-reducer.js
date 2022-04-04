@@ -3,7 +3,9 @@ const SET_DATA = 'SET-DATA';
 
 const initialState = {
     data: [],
-    currentText: ''
+    isSearching: false,
+    currentText: '',
+    resultsCount: 0
 }
 
 const mainReducer = (state = initialState, action) => {
@@ -17,7 +19,10 @@ const mainReducer = (state = initialState, action) => {
         case SET_DATA:
             return {
                 ...state,
-                data: action.data
+                data: action.data,
+                isSearching: !state.isSearching,
+                // currentText: '',
+                resultsCount: action.data.totalItems
             }
 
         default:
