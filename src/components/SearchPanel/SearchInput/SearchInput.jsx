@@ -4,7 +4,6 @@ import css from './searchInput.module.sass';
 
 
 const SearchInput = ({ setCurrentText, currentText, getBooks, handleKeyDown }) => {
-
     return (
         <div className={css.inputBlock}>
             <input

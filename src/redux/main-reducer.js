@@ -1,11 +1,14 @@
 const SET_CURRENT_TEXT = 'SET-CURRENT-TEXT';
 const SET_DATA = 'SET-DATA';
+const CHANGE_IS_SEARCHING = 'CHANGE-IS-SEARCHING';
+const CHANGE_MAIN_VISIBILITY = 'CHANGE-MAIN-VISIBILITY'
 
 const initialState = {
     data: [],
     isSearching: false,
     currentText: '',
-    resultsCount: 0
+    resultsCount: 0,
+    isMainVisible: false
 }
 
 const mainReducer = (state = initialState, action) => {
@@ -20,9 +23,19 @@ const mainReducer = (state = initialState, action) => {
             return {
                 ...state,
                 data: action.data,
-                isSearching: !state.isSearching,
-                // currentText: '',
                 resultsCount: action.data.totalItems
+            }
+
+        case CHANGE_IS_SEARCHING:
+            return {
+                ...state,
+                isSearching: action.isSearching
+            }
+
+        case CHANGE_MAIN_VISIBILITY:
+            return {
+                ...state,
+                isMainVisible: action.isMainVisible
             }
 
         default:
@@ -41,6 +54,20 @@ export const setData = (data) => {
     return {
         type: SET_DATA,
         data: data
+    }
+}
+
+export const changeIsSearching = (flag) => {
+    return {
+        type: CHANGE_IS_SEARCHING,
+        isSearching: flag
+    }
+}
+
+export const changeMainVisibility = (flag) => {
+    return {
+        type: CHANGE_MAIN_VISIBILITY,
+        isMainVisible: flag
     }
 }
 
