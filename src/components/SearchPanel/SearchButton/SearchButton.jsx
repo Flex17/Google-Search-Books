@@ -3,7 +3,7 @@ import css from './searchButton.module.sass';
 
 const SearchButton = ({ getBooks, currentText }) => {
     const navigate = useNavigate()
-    const goBack = () => navigate('')
+    const goBack = () => navigate('/')
     return (
         <button
             className={css.searchBtn}

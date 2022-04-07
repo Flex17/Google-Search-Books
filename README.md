@@ -1,4 +1,4 @@
-# before launching the application
+# Before launching the application
 
 In the getBooks.js file you have to point to your google api key in key variable
 

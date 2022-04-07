@@ -1,12 +1,12 @@
-import Header from '../Header/Header';
+import HeaderContainer from '../Header/HeaderContainer';
 import MainContainer from '../Main/MainContainer';
 
-import css from './app.module.sass'
+import css from './app.module.sass';
 
 function App() {
 	return (
 		<div className={css.app}>
-			<Header />
+			<HeaderContainer />
 			<MainContainer />
 		</div>
 	);

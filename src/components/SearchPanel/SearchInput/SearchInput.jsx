@@ -6,7 +6,7 @@ import css from './searchInput.module.sass';
 
 const SearchInput = ({ setCurrentText, currentText, getBooks, handleKeyDown }) => {
     const navigate = useNavigate()
-    const goBack = () => navigate('')
+    const goBack = () => navigate('/')
 
     return (
         <div className={css.inputBlock}>
