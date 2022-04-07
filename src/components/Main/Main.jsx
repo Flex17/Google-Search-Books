@@ -1,9 +1,9 @@
 import BooksContainer from '../Books/BooksContainer';
 import Spinner from '../../common/Spinner/Spinner';
+import BookContainer from '../Book/BookContainer';
+import { Route, Routes } from 'react-router-dom';
 
 import css from './main.module.sass';
-import { Route, Routes } from 'react-router-dom';
-import BookContainer from '../Book/BookContainer';
 
 const Main = ({ count, isSearching, isMainVisible }) => {
     return (

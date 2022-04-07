@@ -3,8 +3,9 @@ import { setData, changeIsSearching, changeMainVisibility } from "../redux/main-
 
 const key = process.env.REACT_APP_GOOGLE_API_KEY
 
-export const getBooks = (text) => {
+export const getBooks = (text, goBack) => {
     return (dispatch) => {
+        goBack()
         const currentText = text
         const url = `https://www.googleapis.com/books/v1/volumes?q=` + currentText + `&orderBy=newest&maxResults=12&key=` + key
         dispatch(changeMainVisibility(true))
@@ -21,10 +22,10 @@ export const getBooks = (text) => {
     }
 }
 
-export const handleKeyDown = (e, currentText) => {
+export const handleKeyDown = (e, currentText, goBack) => {
     return (dispatch) => {
         if (e.code === 'Enter') {
-            dispatch(getBooks(currentText))
+            dispatch(getBooks(currentText, goBack))
         }
     }
 }

@@ -1,4 +1,5 @@
-import BookContainer from "../BookCard/BookCardContainer";
+import Btn from "../../common/Btn/Btn";
+import BookCardContainer from "../BookCard/BookCardContainer";
 
 import css from './books.module.sass'
 
@@ -14,7 +15,7 @@ const Books = ({ books }) => {
             const description = book?.volumeInfo?.description
 
             return (
-                <BookContainer
+                <BookCardContainer
                     key={key}
                     id={id}
                     img={src}
@@ -32,7 +33,7 @@ const Books = ({ books }) => {
             <div className={css.wrapper}>
                 {results}
             </div>
-            <button className={css.loadMore}>Load more</button>
+            <Btn text={'Load more'} />
         </>
     )
 }
