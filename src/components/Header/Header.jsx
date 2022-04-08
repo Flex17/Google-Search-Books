@@ -3,7 +3,7 @@ import SearchPanel from '../SearchPanel/SearchPanel';
 
 import css from './header.module.sass';
 
-const Header = ({ categoryOptions, sortOptions }) => {
+const Header = ({ categoryOptions, sortOptions, changeCurrentCategory, changeCurrentSort, currentCategory, currentSort }) => {
     return (
         <div className={css.header}>
             <div className={css.background}></div>
@@ -13,6 +13,10 @@ const Header = ({ categoryOptions, sortOptions }) => {
                 <SortingPanel
                     categoryOptions={categoryOptions}
                     sortOptions={sortOptions}
+                    changeCurrentCategory={changeCurrentCategory}
+                    changeCurrentSort={changeCurrentSort}
+                    currentCategory={currentCategory}
+                    currentSort={currentSort}
                 />
             </div>
         </div>

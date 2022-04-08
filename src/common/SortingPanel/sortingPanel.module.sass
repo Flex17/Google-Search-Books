@@ -5,12 +5,26 @@
     margin: 0 auto
     margin-top: 40px
     max-width: 85%
+    @media (max-width: 880px)
+        flex-direction: column
+        justify-content: center
+        align-items: center
 
 .item
     display: flex
     align-items: center
+    @media (max-width: 768px)
+        width: 100%
+        justify-content: space-between
+        &:not(&:last-child)
+            margin-bottom: 20px
+    @media  (min-width: 768px) and (max-width: 880px)
+        width: 80%
+        justify-content: space-between
+        &:not(&:last-child)
+            margin-bottom: 20px
 
 .text
     color: #fff
-    font-size: 18px
+    font-size: 20px
     margin-right: 10px

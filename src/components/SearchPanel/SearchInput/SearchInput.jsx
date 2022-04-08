@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import css from './searchInput.module.sass';
 
 
-const SearchInput = ({ setCurrentText, currentText, getBooks, handleKeyDown }) => {
+const SearchInput = ({ setCurrentText, currentText, getBooks, handleKeyDown, currentCategory, currentSort }) => {
     const navigate = useNavigate()
     const goBack = () => navigate('/')
 
@@ -16,11 +16,11 @@ const SearchInput = ({ setCurrentText, currentText, getBooks, handleKeyDown }) =
                 placeholder='Write something...'
                 value={currentText}
                 onChange={(e) => { setCurrentText(e.target.value) }}
-                onKeyDown={(e) => { handleKeyDown(e, currentText, goBack) }}
+                onKeyDown={(e) => { handleKeyDown(e, currentText, goBack, currentCategory, currentSort) }}
             />
             <div
                 className={css.icon}
-                onClick={() => { getBooks(currentText, goBack) }}
+                onClick={() => { getBooks(currentText, currentCategory, currentSort, goBack) }}
             >
                 <CgSearch size={'35px'} />
             </div>

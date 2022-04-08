@@ -6,8 +6,9 @@ import { getBooks, handleKeyDown } from '../../../asyncActions/getBooks';
 
 const mapStateToProps = (state) => {
     return {
-        isSearching: state.main.isSearching,
-        currentText: state.main.currentText
+        currentText: state.main.currentText,
+        currentCategory: state.search.currentCategory,
+        currentSort: state.search.currentSort
     }
 }
 

@@ -2,7 +2,7 @@ import css from './sortingPanel.module.sass';
 
 import Sorting from '../Sorting/Sorting';
 
-const SortingPanel = ({ categoryOptions, sortOptions }) => {
+const SortingPanel = ({ categoryOptions, sortOptions, changeCurrentCategory, changeCurrentSort, currentCategory, currentSort }) => {
     return (
         <div className={css.sorting}>
             <div className={css.item}>
@@ -11,7 +11,8 @@ const SortingPanel = ({ categoryOptions, sortOptions }) => {
                 </div>
                 <Sorting
                     options={categoryOptions}
-                    defaultValue={categoryOptions[0]}
+                    defaultValue={currentCategory}
+                    changeCurrentSorting={changeCurrentCategory}
                 />
             </div>
             <div className={css.item}>
@@ -20,7 +21,8 @@ const SortingPanel = ({ categoryOptions, sortOptions }) => {
                 </div>
                 <Sorting
                     options={sortOptions}
-                    defaultValue={sortOptions[0]}
+                    defaultValue={currentSort}
+                    changeCurrentSorting={changeCurrentSort}
                 />
             </div>
         </div>
