@@ -3,11 +3,12 @@ import Header from './Header';
 import { changeCurrentCategory, changeCurrentSort } from '../../redux/search-reducer';
 
 const mapStateToProps = (state) => {
+    const url = state.search
     return {
-        categoryOptions: state.search.categoryOptions,
-        sortOptions: state.search.sortOptions,
-        currentCategory: state.search.currentCategory,
-        currentSort: state.search.currentSort
+        categoryOptions: url.categoryOptions,
+        sortOptions: url.sortOptions,
+        currentCategory: url.currentCategory,
+        currentSort: url.currentSort
     }
 }
 

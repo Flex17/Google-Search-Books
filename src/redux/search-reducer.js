@@ -1,5 +1,7 @@
-const CHANGE_CURRENT_CATEGORY = 'CHANGE-CURRENT-CATEGORY'
-const CHANGE_CURRENT_SORT = 'CHANGE-CURRENT-SORT'
+const CHANGE_CURRENT_CATEGORY = 'CHANGE-CURRENT-CATEGORY';
+const CHANGE_CURRENT_SORT = 'CHANGE-CURRENT-SORT';
+const CHANGE_IS_SEARCHING = 'CHANGE-IS-SEARCHING';
+const SET_CURRENT_TEXT = 'SET-CURRENT-TEXT';
 
 const initialState = {
     categoryOptions: [
@@ -16,7 +18,9 @@ const initialState = {
         { value: 'newest', label: 'newest' },
     ],
     currentCategory: 'all',
-    currentSort: 'relevance'
+    currentSort: 'relevance',
+    isSearching: false,
+    currentText: '',
 }
 
 export const searchReducer = (state = initialState, action) => {
@@ -31,6 +35,18 @@ export const searchReducer = (state = initialState, action) => {
             return {
                 ...state,
                 currentSort: action.currentSort
+            }
+
+        case SET_CURRENT_TEXT:
+            return {
+                ...state,
+                currentText: action.text
+            }
+
+        case CHANGE_IS_SEARCHING:
+            return {
+                ...state,
+                isSearching: action.isSearching
             }
 
         default:
@@ -49,5 +65,19 @@ export const changeCurrentSort = (sort) => {
     return {
         type: CHANGE_CURRENT_SORT,
         currentSort: sort.value
+    }
+}
+
+export const setCurrentText = (text) => {
+    return {
+        type: SET_CURRENT_TEXT,
+        text: text
+    }
+}
+
+export const changeIsSearching = (flag) => {
+    return {
+        type: CHANGE_IS_SEARCHING,
+        isSearching: flag
     }
 }

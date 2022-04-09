@@ -1,5 +1,6 @@
 import axios from "axios";
-import { setData, changeIsSearching, changeMainVisibility } from "../redux/main-reducer";
+import { setData, changeMainVisibility } from "../redux/main-reducer";
+import { changeIsSearching } from "../redux/search-reducer";
 
 const key = process.env.REACT_APP_GOOGLE_API_KEY
 

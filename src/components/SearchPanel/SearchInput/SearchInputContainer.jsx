@@ -1,14 +1,14 @@
-
 import { connect } from 'react-redux'
 import SearchInput from './SearchInput';
-import { setCurrentText } from './../../../redux/main-reducer';
+import { setCurrentText } from './../../../redux/search-reducer';
 import { getBooks, handleKeyDown } from '../../../asyncActions/getBooks';
 
 const mapStateToProps = (state) => {
+    const url = state.search
     return {
-        currentText: state.main.currentText,
-        currentCategory: state.search.currentCategory,
-        currentSort: state.search.currentSort
+        currentText: url.currentText,
+        currentCategory: url.currentCategory,
+        currentSort: url.currentSort
     }
 }
 

@@ -3,10 +3,11 @@ import { getBooks } from '../../../asyncActions/getBooks';
 import SearchButton from './SearchButton';
 
 const mapStateToProps = (state) => {
+    const url = state.search
     return {
-        currentText: state.main.currentText,
-        currentCategory: state.search.currentCategory,
-        currentSort: state.search.currentSort
+        currentText: url.currentText,
+        currentCategory: url.currentCategory,
+        currentSort: url.currentSort
     }
 }
 

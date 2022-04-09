@@ -2,6 +2,8 @@ import { connect } from 'react-redux'
 import Book from './Book'
 
 const mapStateToProps = (state) => {
+    window.scrollTo(0, 0)
+
     const url = state.book
     return {
         img: url.img,
