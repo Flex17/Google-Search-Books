@@ -8,45 +8,88 @@
     justify-content: space-between
     align-items: start
     min-height: calc( 100vh - 221px )
+    max-width: 2000px
+    margin: 0 auto
     margin-top: 40px
+    @media (max-width: 768px)
+        flex-direction: column
+        padding-right: 0
+    @media (max-width: 1340px)
+        padding-right: 0
 
 .imgWrapper
     width: 40%
     padding: 80px
     background-color: #e7e7e7
+    @media (max-width: 768px)
+        width: 100%
+        padding: 30px 10px
+    @media (max-width: 1340px) and (min-width: 768px)
+        max-width: 700px
+        padding: 40px
 .img
     display: block
     height: 450px
     width: 350px
     box-shadow: 9px 9px 5px -3px rgba(0, 0, 0, 0.2)
     margin: 0 auto
+    @media (max-width: 768px)
+        width: 80%
+        max-width: 200px
+        max-height: 300px
+    @media (max-width: 1340px) and (min-width: 768px)
+        max-width: 80%
+        height: 100%
 
 .content
     width: 50%
     background-color: #fff
     padding: 0 20px 30px 20px
+    @media (max-width: 768px)
+        width: 100%
+    @media (max-width: 1340px) and (min-width: 768px)
+        width: 55%
 
 .category
     color: #000
     font-size: 18px
     margin-bottom: 30px
+    @media (max-width: 768px)
+        margin: 20px auto
+        font-size: 15px
+    @media (max-width: 1340px) and (min-width: 768px)
+        font-size: 17px
 
 .title
     font-size: 28px
     color: #000
     margin-bottom: 20px
+    @media (max-width: 768px)
+        font-size: 25px
+    @media (max-width: 1340px) and (min-width: 768px)
+        font-size: 26px
 
 .authors
     text-decoration: underline
     color: #535353
     font-size: 18px
     margin-bottom: 20px
+    @media (max-width: 768px)
+        font-size: 15px
+    @media (max-width: 1340px) and (min-width: 768px)
+        font-size: 16px
 
 .descrWrapper
     padding: 20px
     border: 1px solid #a3a3a3
+    @media (max-width: 1340px)
+        padding: 15px
 
 .descr
     font-size: 18px
     font-weight: 500
     line-height: 1.5
+    @media (max-width: 768px)
+        font-size: 15px
+    @media (max-width: 1340px) and (min-width: 768px)
+        font-size: 16px

@@ -3,17 +3,17 @@ const CHANGE_CURRENT_SORT = 'CHANGE-CURRENT-SORT'
 
 const initialState = {
     categoryOptions: [
-        { value: 'all' },
-        { value: 'art' },
-        { value: 'biography' },
-        { value: 'computers' },
-        { value: 'history' },
-        { value: 'medical' },
-        { value: 'poetry' },
+        { value: 'all', label: 'all' },
+        { value: 'art', label: 'art' },
+        { value: 'biography', label: 'biography' },
+        { value: 'computers', label: 'computers' },
+        { value: 'history', label: 'history' },
+        { value: 'medical', label: 'medical' },
+        { value: 'poetry', label: 'poetry' },
     ],
     sortOptions: [
-        { value: 'relevance' },
-        { value: 'newest' },
+        { value: 'relevance', label: 'relevance' },
+        { value: 'newest', label: 'newest' },
     ],
     currentCategory: 'all',
     currentSort: 'relevance'
@@ -41,13 +41,13 @@ export const searchReducer = (state = initialState, action) => {
 export const changeCurrentCategory = (category) => {
     return {
         type: CHANGE_CURRENT_CATEGORY,
-        currentCategory: category
+        currentCategory: category.value
     }
 }
 
 export const changeCurrentSort = (sort) => {
     return {
         type: CHANGE_CURRENT_SORT,
-        currentSort: sort
+        currentSort: sort.value
     }
 }

@@ -9,7 +9,7 @@ export const getBooks = (text, currentCategory, currentSort, goBack) => {
         const currentText = text
         const currentSearch = currentCategory === 'all' ? '' : `+subject:${currentCategory}`
 
-        const url = `https://www.googleapis.com/books/v1/volumes?q=${currentText}${currentSearch}&subject=computers&orderBy=${currentSort}&maxResults=12&key=${key}`
+        const url = `https://www.googleapis.com/books/v1/volumes?q=${currentText}${currentSearch}&orderBy=${currentSort}&maxResults=12&key=${key}`
 
         dispatch(changeMainVisibility(true))
         dispatch(changeIsSearching(true))

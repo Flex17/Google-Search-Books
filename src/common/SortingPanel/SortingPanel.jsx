@@ -1,6 +1,6 @@
 import css from './sortingPanel.module.sass';
 
-import Sorting from '../Sorting/Sorting';
+import CustomSelect from '../CustomSelect/CustomSelect';
 
 const SortingPanel = ({ categoryOptions, sortOptions, changeCurrentCategory, changeCurrentSort, currentCategory, currentSort }) => {
     return (
@@ -9,7 +9,7 @@ const SortingPanel = ({ categoryOptions, sortOptions, changeCurrentCategory, cha
                 <div className={css.text}>
                     Categories
                 </div>
-                <Sorting
+                <CustomSelect
                     options={categoryOptions}
                     defaultValue={currentCategory}
                     changeCurrentSorting={changeCurrentCategory}
@@ -19,7 +19,7 @@ const SortingPanel = ({ categoryOptions, sortOptions, changeCurrentCategory, cha
                 <div className={css.text}>
                     Sorting by
                 </div>
-                <Sorting
+                <CustomSelect
                     options={sortOptions}
                     defaultValue={currentSort}
                     changeCurrentSorting={changeCurrentSort}
