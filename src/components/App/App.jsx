@@ -3,7 +3,7 @@ import MainContainer from '../Main/MainContainer';
 
 import css from './app.module.sass';
 
-function App() {
+const App = () => {
 	return (
 		<div className={css.app}>
 			<HeaderContainer />

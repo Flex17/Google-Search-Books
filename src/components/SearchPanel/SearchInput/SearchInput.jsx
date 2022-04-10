@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import css from './searchInput.module.sass';
 
 
-const SearchInput = ({ setCurrentText, currentText, getBooks, handleKeyDown, currentCategory, currentSort }) => {
+const SearchInput = ({ setCurrentText, currentText, getBooks, handleKeyDown, currentCategory, currentSort, cleareData }) => {
     const navigate = useNavigate()
     const goBack = () => navigate('/')
 
@@ -20,7 +20,7 @@ const SearchInput = ({ setCurrentText, currentText, getBooks, handleKeyDown, cur
             />
             <div
                 className={css.icon}
-                onClick={() => { getBooks(currentText, currentCategory, currentSort, goBack) }}
+                onClick={() => { cleareData(); getBooks(currentText, currentCategory, currentSort, goBack) }}
             >
                 <CgSearch size={'35px'} />
             </div>

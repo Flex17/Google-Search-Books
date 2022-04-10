@@ -3,7 +3,11 @@ import BookCardContainer from "../BookCard/BookCardContainer";
 
 import css from './books.module.sass'
 
-const Books = ({ books }) => {
+const Books = ({ books, currentText, currentCategory, currentSort, getBooks, startIndex, totalCount }) => {
+    const click = () => {
+        getBooks(currentText, currentCategory, currentSort, () => { }, startIndex)
+    }
+
     const results = books ?
         books.map(book => {
             const id = book?.id
@@ -33,7 +37,15 @@ const Books = ({ books }) => {
             <div className={css.wrapper}>
                 {results}
             </div>
-            <Btn text={'Load more'} />
+            {
+                startIndex >= totalCount ?
+                    <div></div>
+                    :
+                    <Btn
+                        text={'Load more'}
+                        click={click}
+                    />
+            }
         </>
     )
 }

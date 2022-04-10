@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
-import css from './bookCard.module.sass';
 
+import css from './bookCard.module.sass';
 
 const BookCard = ({ img, categories, title, authors, id, description, setCurrentBookInfo }) => {
     const author = authors ? authors.join(', ') : ''
@@ -10,10 +10,12 @@ const BookCard = ({ img, categories, title, authors, id, description, setCurrent
         <NavLink
             to={`/${id}`}
             className={css.wrapper}
-            onClick={() => { setCurrentBookInfo({ img, title, categories, authors, description }) }}
+            onClick={() => {
+                setCurrentBookInfo({ img, title, categories, authors, description });
+            }}
         >
             <div className={css.imgWrapper}>
-                <img className={css.img} src={img} alt="cover" />
+                <img className={css.img} src={img} alt="img" />
             </div>
             <div className={css.category}>
                 {category}

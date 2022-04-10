@@ -17,10 +17,10 @@ const initialState = {
         { value: 'relevance', label: 'relevance' },
         { value: 'newest', label: 'newest' },
     ],
+    currentText: '',
     currentCategory: 'all',
     currentSort: 'relevance',
     isSearching: false,
-    currentText: '',
 }
 
 export const searchReducer = (state = initialState, action) => {

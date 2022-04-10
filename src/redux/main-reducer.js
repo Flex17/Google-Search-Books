@@ -1,10 +1,13 @@
 const SET_DATA = 'SET-DATA';
-const CHANGE_MAIN_VISIBILITY = 'CHANGE-MAIN-VISIBILITY'
+const CHANGE_MAIN_VISIBILITY = 'CHANGE-MAIN-VISIBILITY';
+const CLEARE_DATA = 'CLEARE-DATA'
 
 const initialState = {
     data: [],
-    resultsCount: 0,
-    isMainVisible: false
+    totalCount: 0,
+    isMainVisible: false,
+    paginationStep: 30,
+    startIndex: 0
 }
 
 const mainReducer = (state = initialState, action) => {
@@ -12,8 +15,9 @@ const mainReducer = (state = initialState, action) => {
         case SET_DATA:
             return {
                 ...state,
-                data: action.data,
-                resultsCount: action.data.totalItems
+                data: [...state.data, ...action.data.items],
+                totalCount: action.data.totalItems,
+                startIndex: state.startIndex + state.paginationStep
             }
 
 
@@ -21,6 +25,12 @@ const mainReducer = (state = initialState, action) => {
             return {
                 ...state,
                 isMainVisible: action.isMainVisible
+            }
+
+        case CLEARE_DATA:
+            return {
+                ...state,
+                data: []
             }
 
         default:
@@ -40,6 +50,12 @@ export const changeMainVisibility = (flag) => {
     return {
         type: CHANGE_MAIN_VISIBILITY,
         isMainVisible: flag
+    }
+}
+
+export const cleareData = () => {
+    return {
+        type: CLEARE_DATA
     }
 }
 

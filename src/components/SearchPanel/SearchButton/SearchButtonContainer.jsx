@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
 import { getBooks } from '../../../asyncActions/getBooks';
 import SearchButton from './SearchButton';
+import { cleareData } from './../../../redux/main-reducer';
 
 const mapStateToProps = (state) => {
     const url = state.search
@@ -12,4 +13,4 @@ const mapStateToProps = (state) => {
 }
 
 
-export default connect(mapStateToProps, { getBooks })(SearchButton)
+export default connect(mapStateToProps, { getBooks, cleareData })(SearchButton)

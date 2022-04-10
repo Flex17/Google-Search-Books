@@ -5,7 +5,7 @@ import { changeMainVisibility } from '../../redux/main-reducer';
 const mapStateToProps = (state) => {
     const url = state.main
     return {
-        count: url.resultsCount,
+        count: url.totalCount,
         isSearching: state.search.isSearching,
         isMainVisible: url.isMainVisible
     }
